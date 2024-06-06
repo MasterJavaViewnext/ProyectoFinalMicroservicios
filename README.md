@@ -1,10 +1,10 @@
-## Agencia de Viajes - Microservicios
+# Agencia de Viajes - Microservicios
 Este proyecto implementa una aplicación para una agencia de viajes utilizando una arquitectura basada en microservicios. El backend consta de cuatro microservicios principales: hoteles, vuelos, reservas y gestión de clientes. Además, incluye vistas para el login y la gestión de reservas.
 
-# Descripción del Proyecto
+## Descripción del Proyecto
 Este proyecto tiene como objetivo crear una aplicación para una agencia de viajes que permite gestionar hoteles, vuelos, reservas y clientes. Cada funcionalidad está implementada como un microservicio separado, lo que facilita el mantenimiento y la escalabilidad del sistema.
 
-# Microservicios
+## Microservicios
 ### Servicio de Hoteles
 Este servicio gestiona la información relacionada con los hoteles.
 
