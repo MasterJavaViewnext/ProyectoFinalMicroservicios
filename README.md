@@ -93,7 +93,7 @@ Para acceder al login de la interfaz la url es: **localhost:8083/cliente/login**
 ![Alt text](img/login.png?raw=true "Login")
 
 ### Registro
-![Alt text](img/register.png?raw=true "Registro")
+![alt text](https://github.com/MasterJavaViewnext/ProyectoFinalMicroservicios/blob/master/img/register.png?raw=true "Registro")
 
 ### Numero de personas para el alta de reserva
 ![Numero](img/numPersonas.png?raw=true "Numero personas")
