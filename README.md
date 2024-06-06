@@ -8,8 +8,7 @@ Este proyecto tiene como objetivo crear una aplicación para una agencia de viaj
 ### Servicio de Hoteles
 Este servicio gestiona la información relacionada con los hoteles.
 
-Recursos:
-
+Recursos:  
 **GET** /hoteles -> Devuele todos los hoteles<br />
 **GET** /hoteles/{id} -> Devuelve los datos de un hotel a partir de su id<br />
 **GET** /hoteles/pais/{pais} -> Devuelve la lista de hoteles de ese pais.<br />
@@ -17,8 +16,7 @@ Recursos:
 **GET** /hoteles/disponibles/{id} -> Devuelve true o false dependiendo si ese hotel está disponible<br />
 **GET** /hoteles/{nombre} -> Devuelve los datos de un hotel a partir de su nombre.<br />
 
-Modelo de Hotel:
-
+Modelo de Hotel:  
 idHotel (autonumérico)  
 nombre  
 localizacion  
@@ -32,15 +30,13 @@ Testing: http://localhost:8080
 ### Servicio de Vuelos
 Este servicio gestiona la información relacionada con los vuelos.
 
-Recursos:
-
+Recursos:  
 **GET** /vuelos -> Devuelve todos los vuelos  
 **GET** /vuelos/{id} -> Devuelve el vuelo con ese id  
 **GET** /vuelos/plazas/{plazas} -> Devuelve la lista de vuelos disponibles que tienen suficientes plazas para la cantidad especificada  
 **PUT** /vuelos?id={id}&plazas={plazas}  Actualiza las plazas disponibles de un vuelo. Recibe el id del vuelo y las plazas reservadas  
 
-Modelo de Vuelo:
-
+Modelo de Vuelo:  
 idVuelo (autonumérico)  
 companhia  
 fechaVuelo  
@@ -62,8 +58,7 @@ Recursos:
 **DELETE** /reservas/{id} -> Elimina una reserva si existe alguna con ese id  
 **GET** /reservas/hotel/{nombre} -> Devuelve las reservas existentes para el nombre del hotel especificado. Interactúa con           el servicio de hoteles para obtener el id del hotel.  
 
-Modelo de Reserva:
-
+Modelo de Reserva:  
 idReserva (autonumérico)  
 idCLiente  
 idHotel  
@@ -75,7 +70,7 @@ Testing: http://localhost:8082
 ### Servicio de Gestión de Clientes
 Este servicio gestiona la información de los clientes y las operaciones de autenticación.
 
-Recursos:
+Recursos:  
 **GET** /clientes -> devuelve una lista de todos los clientes  
 **GET** /clientes/{id} -> devuelve el cliente del id especificado  
 **POST** /clientes -> Crea un cliente. Recibe un objeto JSON con todos los parametros menos id  
@@ -100,7 +95,7 @@ Para acceder al login de la interfaz la url es: **localhost:8083/cliente/login**
 ![Alt text](img/login.png?raw=true "Login")
 
 ### Registro
-![Alt text](register.png?raw=true "Registro")
+![Alt text](img/register.png?raw=true "Registro")
 
 ### Numero de personas para el alta de reserva
 ![Numero](img/numPersonas.png?raw=true "Numero personas")
