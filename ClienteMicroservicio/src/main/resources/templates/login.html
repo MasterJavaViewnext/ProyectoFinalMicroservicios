@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container my-2" align="center">
-<form style="width: 22rem;" action="entrar" th:object="${cliente}" method="GET">
+<form style="width: 22rem;" action="/cliente/entrar" th:object="${cliente}" method="GET">
  <!-- 2 column grid layout for inline styling -->
   <div class="row mb-4">
     <div class="col d-flex justify-content-center">
@@ -28,7 +28,8 @@
     <input type="password" th:field="*{password}" id="form2Example2" class="form-control" />
     <label class="form-label" for="form2Example2">Contraseña</label>
   </div>
-
+  
+	<p style="color: red;" th:if="${wrong}">Usuario o contraseña incorrectos</p>
 
   <!-- Submit button -->
   <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" >Entrar</button>

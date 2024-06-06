@@ -13,19 +13,19 @@
 <div class="container my-2" align="center">
 <h3> Lista de reservas de <span th:text="${cliente.nombre}"></span></h3>
 <a th:href="@{/reserva/insert}" class="btn btn-primary btn-sm mb-3" >Añadir reserva </a>
-	<table style="width: 80%" border="1" class = "table table-striped table-responsive-md">
+	<table style="width: 80%; text-align:center;" border="1" class = "table table-striped table-responsive-md">
 		<thead>
 			<tr>
 				<th>ID reserva</th>
-				<th>ID hotel</th>
-				<th>ID vuelo</th>
+				<th>Origen -> destino</th>
+				<th>Nombre hotel</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="reserva:${reservas}">
 				<td th:text="${reserva.idReserva}"></td>
-				<td th:text="${reserva.idHotel}"></td>
-				<td th:text="${reserva.idVuelo}"></td>
+				<td th:text="${reserva.origenVuelo +' -> '+ reserva.destinoVuelo}"></td>
+				<td th:text="${reserva.nombreHotel}"></td>
 				<td>
 				<form action="#" th:action="@{/reserva/detalle/} + ${reserva.idReserva}" method="get">
                 <button class="btn btn-primary btn-sm mb-3" th:id="'table_entry_childs_button_' + ${reserva.idReserva}" type="submit">

@@ -34,6 +34,7 @@ public class ClienteController {
 	public String login(Model model) {
 		Cliente cliente = new Cliente();
 		model.addAttribute("cliente", cliente);
+		model.addAttribute("wrong", false);
 		return "login";
 	}
 	
@@ -51,10 +52,24 @@ public class ClienteController {
 		if (clienteLoged != null) {
 			return new RedirectView("http://localhost:8082/reserva/"+clienteLoged.getId());
 		} else {
-			return new RedirectView("login");
+			return new RedirectView("login/wrong");
 		}
 	}
-
+	/**
+	 * Endpoint que muestra un formulario de login para acceder a las reservas 
+	 * y crea un cliente vacio para alñadirlo al model
+	 * @param 	model con un Cliente
+	 * @return 	vista de login
+	 */
+	@GetMapping(value="login/wrong")
+	public String loginWrong(Model model) {
+		Cliente cliente = new Cliente();
+		model.addAttribute("cliente", cliente);
+		model.addAttribute("wrong", true);
+		return "login";
+	}
+	
+	
 	/**
 	 * Endpoint que muestra un formulario para poder registrar un ususario
 	 * 

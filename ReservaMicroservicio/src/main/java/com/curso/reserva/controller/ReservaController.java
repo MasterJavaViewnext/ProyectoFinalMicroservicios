@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 import com.curso.reserva.model.ClienteDTO;
 import com.curso.reserva.model.HotelDTO;
 import com.curso.reserva.model.Reserva;
+import com.curso.reserva.model.ShowReserva;
 import com.curso.reserva.model.VueloDTO;
 import com.curso.reserva.service.ReservaService;
 import com.curso.reserva.service.ReservaServiceImpl;
@@ -49,8 +50,9 @@ public class ReservaController {
 		//Obetenemos el cliente a partir de su id y lo añadimos al model
 		ClienteDTO cliente = template.getForObject(ReservaServiceImpl.URL_CLIENTES+"/"+idCliente, ClienteDTO.class);
 		model.addAttribute("cliente", cliente);
-		//Añadimos la lista de reservas de ese cliente al model
-		model.addAttribute("reservas", service.findByIdCliente(idCliente));
+		//Transformamos la lista de reservas en ShowReservas y añadimos la lista de showReservas de ese cliente al model
+		List<ShowReserva> reservas = listaReservasToListaShowReservas(service.findByIdCliente(idCliente));
+		model.addAttribute("reservas", reservas);
 		//Instanciamos reserva para añadir el idCliente y la añadimos al model
 		Reserva reserva = new Reserva();
 		reserva.setIdCliente(cliente.getId());
@@ -173,4 +175,14 @@ public class ReservaController {
 		return "showReserva";
 	}
 	
+	
+	private List<ShowReserva> listaReservasToListaShowReservas(List<Reserva> reservas){
+		return reservas.stream().map(r -> {
+			ShowReserva reserva = new ShowReserva(r.getIdReserva(), r.getIdCliente(), r.getIdHotel(), r.getIdVuelo(), r.getNumPersonas());
+			reserva.setNombreHotel((template.getForObject(ReservaServiceImpl.URL_HOTELES+"/"+r.getIdHotel(), HotelDTO.class)).getNombre());
+			reserva.setOrigenVuelo((template.getForObject(ReservaServiceImpl.URL_VUELOS+"/"+r.getIdVuelo(), VueloDTO.class)).getOrigen());
+			reserva.setDestinoVuelo((template.getForObject(ReservaServiceImpl.URL_VUELOS+"/"+r.getIdVuelo(), VueloDTO.class)).getDestino());
+			return reserva;
+		}).toList();
+	}
 }
