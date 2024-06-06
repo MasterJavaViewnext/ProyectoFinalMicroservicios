@@ -27,6 +27,7 @@ categoria
 precio  
 disponible (sí/no)  
 
+Testing: http://localhost:8080
 
 ### Servicio de Vuelos
 Este servicio gestiona la información relacionada con los vuelos.
@@ -48,6 +49,7 @@ destino
 precio  
 plazasDisponibles  
 
+Testing: http://localhost:8081
 
 ### Servicio de Reservas
 Este servicio gestiona las reservas de los clientes.
@@ -68,6 +70,8 @@ idHotel
 idVuelo  
 numPersonas  
 
+Testing: http://localhost:8082
+
 ### Servicio de Gestión de Clientes
 Este servicio gestiona la información de los clientes y las operaciones de autenticación.
 
@@ -86,3 +90,16 @@ nombre
 apellidos  
 dni  
 
+Testing: http://localhost:8083
+
+## Authors
+
+- [@RaulRodal](https://www.github.com/raulrodal)
+
+
+## Features
+
+- Creacion de 4 microservicios
+- CRUD Reservas
+- Login
+- Interoperabilidad entre los microservicios para realizar las operaciones con actualizaciones automáticas
