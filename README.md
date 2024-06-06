@@ -94,15 +94,25 @@ Testing: http://localhost:8083
 
 
 # Interfaz
-Para acceder al login de la interfaz la url es: **localhost:8083/cliente/login**
+Para acceder al login de la interfaz la url es: **localhost:8083/cliente/login**  
+
 ### Login
 ![Alt text](img/login.png?raw=true "Login")
 
 ### Registro
-![Alt text](/img/register.png?raw=true "Login")
+![Alt text](img/register.png?raw=true "Registro")
 
+### Numero de personas para el alta de reserva
+![Numero](img/NumPersonas.png?raw=true "Numero personas")
 
+### Lista de reservas del usuario logeado
+![Alt text](img/list.png?raw=true "Lista reservas")
 
+### Seleccion vuelo con filtrado
+![Alt text](img/vuelos.png?raw=true "Vuelos")
+
+### Seleccion hoteles del origen del vuelo seleccionado
+![Alt text](img/hotels.png?raw=true "Hoteles")
 
 
 ## Authors
