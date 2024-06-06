@@ -105,7 +105,7 @@ Para acceder al login de la interfaz la url es: **localhost:8083/cliente/login**
 ![Vuelos](img/vuelos.png?raw=true "Vuelos")
 
 ### Seleccion hoteles del origen del vuelo seleccionado
-![Hoteles](img/hotels.png?raw=true "Hoteles")
+![Hoteles](img/hoteles.png?raw=true "Hoteles")
 
 
 ## Authors
@@ -120,8 +120,8 @@ Para acceder al login de la interfaz la url es: **localhost:8083/cliente/login**
 - Login
 - Interoperabilidad entre los microservicios para realizar las operaciones con actualizaciones automáticas
 
-
-
+## Tecnologías
+Spring Boot, MySQL, ThymeLeaf, JUnit, Swagger
 
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)]([https://www.linkedin.com/](https://www.linkedin.com/in/raulrodal/))
