@@ -50,15 +50,14 @@ Testing: http://localhost:8081
 ### Servicio de Reservas
 Este servicio gestiona las reservas de los clientes.
 
-Recursos:
-
+Recursos:  
 **GET** /reservas -> Devuelve una lista de todas las reservas  
 **GET** /reservas/{id} -> Devuelve la reserva del id indicado  
 **POST** /reservas -> Crea una nueva reserva. Recibe un objeto JSON con el id del vuelo, id del hotel, id del cliente y               total de personas. Actualiza las plazas disponibles en el servicio de vuelos.  
 **DELETE** /reservas/{id} -> Elimina una reserva si existe alguna con ese id  
 **GET** /reservas/hotel/{nombre} -> Devuelve las reservas existentes para el nombre del hotel especificado. Interactúa con           el servicio de hoteles para obtener el id del hotel.  
 
-Modelo de Reserva:  
+Modelo de Reserva:   
 idReserva (autonumérico)  
 idCLiente  
 idHotel  
@@ -76,8 +75,7 @@ Recursos:
 **POST** /clientes -> Crea un cliente. Recibe un objeto JSON con todos los parametros menos id  
 **DELETE** /clientes/{id} -> Elimina el cliente con el id especificado  
 
-Modelo de Cliente:
-
+Modelo de Cliente:  
 id (autonumérico)  
 user  
 password  
