@@ -10,22 +10,22 @@ Este servicio gestiona la información relacionada con los hoteles.
 
 Recursos:
 
-GET /hoteles -> Devuele todos los hoteles
-GET /hoteles/{id} -> Devuelve los datos de un hotel a partir de su id
-GET /hoteles/pais/{pais} -> Devuelve la lista de hoteles de ese pais.
-GET /hoteles/disponibles -> Devuelve la lista de hoteles disponibles.
-GET /hoteles/disponibles/{id} -> Devuelve true o false dependiendo si ese hotel está disponible
-GET /hoteles/{nombre} -> Devuelve los datos de un hotel a partir de su nombre.
+GET /hoteles -> Devuele todos los hoteles<br />
+GET /hoteles/{id} -> Devuelve los datos de un hotel a partir de su id<br />
+GET /hoteles/pais/{pais} -> Devuelve la lista de hoteles de ese pais.<br />
+GET /hoteles/disponibles -> Devuelve la lista de hoteles disponibles.<br />
+GET /hoteles/disponibles/{id} -> Devuelve true o false dependiendo si ese hotel está disponible<br />
+GET /hoteles/{nombre} -> Devuelve los datos de un hotel a partir de su nombre.<br />
 
 Modelo de Datos:
 
-idHotel (autonumérico)
-nombre
-localizacion
-pais
-categoria
-precio
-disponible (sí/no)
+idHotel (autonumérico)  
+nombre  
+localizacion  
+pais  
+categoria  
+precio  
+disponible (sí/no)  
 
 
 ### Servicio de Vuelos
