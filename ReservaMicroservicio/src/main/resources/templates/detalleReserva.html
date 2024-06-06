@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-lg-6">
+				<h2 class="fw-bold">
+					Reserva numero <span th:text="${reserva.idReserva}"></span>
+				</h2>
+				<p>
+					Numero de personas: <span th:text=${reserva.numPersonas}></span>
+				<h3 class="my-4">Vuelo</h3>
+				<h5>
+					<span th:text=${vuelo.origen}></span> - <span
+						th:text=${vuelo.destino}></span>
+				</h5>
+				<p class="mb-4">
+					Compañia: <span th:text=${vuelo.companhia}></span> <br> Fecha:
+					<span th:text=${vuelo.fechaVuelo}></span> <br> Precio: <span
+						th:text=${vuelo.precio}></span>
+				</p>
+
+				<h3 class="my-4">Hotel</h3>
+				Nombre: <span th:text=${hotel.nombre}></span> <br> Pais: <span
+					th:text=${hotel.pais}></span> <br> Localizacion: <span
+					th:text=${hotel.localizacion}></span> <br> Categoria: <span
+					th:text=${hotel.categoria}></span> <br> Precio: <span
+					th:text=${hotel.precio}></span> <br>
+				<br>
+				<div class="d-flex gap-3 mb-4">
+					<button class="btn btn-primary" type="button">
+						<a href="javascript:window.history.back();"
+							style="text-decoration: none; color: inherit;">Volver</a>
+					</button>
+
+					<button class="btn btn-primary btn-sm mb-3" type="button"
+						th:attr="onclick=|deleteProducto('${reserva.idReserva}')|">
+						Eliminar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	//Confirmacion para borrar una reserva
+	function deleteProducto(id) {
+		if (!confirm('Estas seguro de que quieres eliminar la reserva con id '
+				+ id + '?')) {
+			e.preventDefault();
+		} else {
+			window.location.href = '/reserva/eliminar/' + id;
+		}
+	}
+</script>
+</html>

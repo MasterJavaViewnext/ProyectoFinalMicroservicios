@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Reserva creada</h1>
+		<table style="width: 80%" border="1" class = "table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>ID cliente</th>
+				<th>ID hotel</th>
+				<th>ID vuelo</th>
+				<th>Numero personas</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${reserva.idCliente}"></td>
+				<td th:text="${reserva.idHotel}"></td>
+				<td th:text="${reserva.idVuelo}"></td>
+				<td th:text="${reserva.numPersonas}"></td>
+			</tr>
+		</tbody>
+	</table>
+		<br> <a th:href="@{/reserva/{id}(id=${reserva.idCliente})}"> Back to reservas List</a>
+	</div>
+</body>
+</html>

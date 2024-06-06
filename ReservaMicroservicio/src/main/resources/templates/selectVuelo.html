@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Selecciona vuelo</h1>
+		<input type="text" id="filtroOrigen" onkeyup="filtrarByOrigen()"
+				placeholder="Busqueda por origen.."> 
+		<table id="myTable" style="width: 80%" border="1" class = "table table-striped table-responsive-md">
+		<thead>
+			<tr>
+				<th>ID vuelo</th>
+				<th>Compañia</th>
+				<th>Fecha</th>
+				<th>Origen</th>
+				<th>Destino</th>
+				<th>Precio</th>
+				<th>Plazas</th>
+				<th>SELECCIONA</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="vuelo:${vuelos}">
+				<td th:text="${vuelo.idVuelo}"></td>
+				<td th:text="${vuelo.companhia}"></td>
+				<td th:text="${vuelo.fechaVuelo}"></td>
+				<td th:text="${vuelo.origen}"></td>
+				<td th:text="${vuelo.destino}"></td>
+				<td th:text="${vuelo.precio}"></td>
+				<td th:text="${vuelo.plazasDisponibles}"></td>
+				<td> 
+				<form action="#" th:action="@{/reserva/insert/} + ${{vuelo.idVuelo}}" method="post">
+                <button class="btn btn-primary btn-sm mb-3" th:id="'table_entry_childs_button_' + ${vuelo.idVuelo}" type="submit">
+                    SELECCIONAR
+                </button>
+            	</form>
+            </td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</body>
+<script type="text/javascript">
+function filtrarByOrigen() {
+	  // Declare variables
+	  var input, filter, table, tr, td, i, txtValue;
+	  input = document.getElementById("filtroOrigen");
+	  filter = input.value.toUpperCase();
+	  table = document.getElementById("myTable");
+	  tr = table.getElementsByTagName("tr");
+
+	  // Loop through all table rows, and hide those who don't match the search query
+	  for (i = 0; i < tr.length; i++) {
+	    td = tr[i].getElementsByTagName("td")[3];
+	    if (td) {
+	      txtValue = td.textContent || td.innerText;
+	      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+	        tr[i].style.display = "";
+	      } else {
+	        tr[i].style.display = "none";
+	      }
+	    }
+	  }
+}
+</script>
+</html>
