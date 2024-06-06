@@ -39,14 +39,15 @@ class ReservaRestControllerTest {
 	
 	@BeforeEach
 	public void setup() {
-		Reserva reserva = new Reserva(1l, 1l, 1l, 0);
+		Reserva reserva = new Reserva(1l, 1l, 1l, 1l, 1);
 		when(service.findById(1)).thenReturn(reserva);
 		when(service.findAll()).thenReturn(Arrays.asList(reserva));
+		when(service.findByHotelNombre("Hotel la paz")).thenReturn(Arrays.asList(reserva));
 	}
 	
 	@Test
 	public void InsertReservaTest() throws Exception {
-		doNothing().when(service).insert(any(Reserva.class));
+		when(service.insert(any(Reserva.class))).thenReturn(true);
 		mockMvc.perform(post("/reservas")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content("{\"idCliente\":\"1\", \"idHotel\":\"1\", \"idVuelo\":\"1\", \"numPersonas\":\"1\"}"))
@@ -66,8 +67,11 @@ class ReservaRestControllerTest {
 			.andExpect(status().isOk())
 			.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 			.andExpect(jsonPath("$", hasSize(1)))
+			.andExpect(jsonPath("$[0].idReserva", is(1)))
 			.andExpect(jsonPath("$[0].idCliente", is(1)))
-			.andExpect(jsonPath("$[0].idHotel", is(37)));
+			.andExpect(jsonPath("$[0].idHotel", is(1)))
+			.andExpect(jsonPath("$[0].idVuelo", is(1)))
+			.andExpect(jsonPath("$[0].numPersonas", is(1)));
 	}
 	
 	@Test
@@ -75,8 +79,23 @@ class ReservaRestControllerTest {
 		mockMvc.perform(get("/reservas/1"))
 			.andExpect(status().isOk())
 			.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-			.andExpect(jsonPath("$[0].idCliente", is(1)))
-			.andExpect(jsonPath("$[0].idHotel", is(1)));
+			.andExpect(jsonPath("$.idReserva", is(1)))
+			.andExpect(jsonPath("$.idCliente", is(1)))
+			.andExpect(jsonPath("$.idHotel", is(1)))
+			.andExpect(jsonPath("$.idVuelo", is(1)))
+			.andExpect(jsonPath("$.numPersonas", is(1)));
+	}
+	
+	@Test
+	public void getReservaByNombreHotelTest() throws Exception {
+		mockMvc.perform(get("/reservas/hotel/Hotel la paz"))
+			.andExpect(status().isOk())
+			.andExpect(content().contentType(MediaType.APPLICATION_JSON))
+			.andExpect(jsonPath("$.idReserva", is(1)))
+			.andExpect(jsonPath("$.idCliente", is(1)))
+			.andExpect(jsonPath("$.idHotel", is(1)))
+			.andExpect(jsonPath("$.idVuelo", is(1)))
+			.andExpect(jsonPath("$.numPersonas", is(1)));
 	}
 
 

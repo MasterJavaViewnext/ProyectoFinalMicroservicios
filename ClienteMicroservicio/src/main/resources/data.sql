@@ -1,10 +1,3 @@
 INSERT INTO cliente (nombre, apellidos, dni, usuario, password) VALUES ('Juan', 'Pérez López', '12345678A','juanito','pistola');
-INSERT INTO cliente (nombre, apellidos, dni, usuario, password) VALUES ('María', 'García Martínez', '23456789B', 'raul', 'abc123.');
-INSERT INTO cliente (nombre, apellidos, dni, usuario, password) VALUES ('Pedro', 'González Ruiz', '34567890C', 'rodal', 'abc123.');
-INSERT INTO cliente (nombre, apellidos, dni) VALUES ('Ana', 'Sánchez Blanco', '45678901D');
-INSERT INTO cliente (nombre, apellidos, dni) VALUES ('José', 'López Fernández', '56789012E');
-INSERT INTO cliente (nombre, apellidos, dni) VALUES ('Isabel', 'Rodríguez Gómez', '67890123F');
-INSERT INTO cliente (nombre, apellidos, dni) VALUES ('David', 'Martín Jiménez', '78901234G');
-INSERT INTO cliente (nombre, apellidos, dni) VALUES ('Laura', 'Fernández Moreno', '89012345H');
-INSERT INTO cliente (nombre, apellidos, dni) VALUES ('Carlos', 'Álvarez López', '90123456I');
-INSERT INTO cliente (nombre, apellidos, dni) VALUES ('Marta', 'Navarro Rubio', '01234567J');
+INSERT INTO cliente (nombre, apellidos, dni, usuario, password) VALUES ('María', 'García Martínez', '23456789B', 'maria', 'abc123.');
+INSERT INTO cliente (nombre, apellidos, dni, usuario, password) VALUES ('Pedro', 'González Ruiz', '34567890C', 'pedro', 'abc123.');

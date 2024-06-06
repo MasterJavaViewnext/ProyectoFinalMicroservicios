@@ -91,7 +91,7 @@ public class ReservaRestController {
      */
     @GetMapping(value = "hotel/{nombre}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Obtener reservas por nombre del hotel", notes = "Devuelve una lista de reservas en un hotel específico según su nombre")
-    public List<Reserva> findByHotelNombre(@ApiParam(value = "Nombre del hotel", required = true) @PathVariable String nombre) {
+    public List<Reserva> findByHotelNombre(@ApiParam(value = "Nombre del hotel", required = true) @PathVariable("nombre") String nombre) {
         return service.findByHotelNombre(nombre);
     }
 }

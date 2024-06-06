@@ -78,6 +78,8 @@ public class ReservaServiceImpl implements ReservaService {
 	@Override
 	public List<Reserva> findByHotelNombre(String nombre) {
 		HotelDTO hotel = template.getForObject(URL_HOTELES+ "/nombre/" + nombre, HotelDTO.class);
+		System.out.println(nombre);
+		System.out.println(hotel.getIdHotel());
 		return dao.findByIdHotel(hotel.getIdHotel());
 	}
 
