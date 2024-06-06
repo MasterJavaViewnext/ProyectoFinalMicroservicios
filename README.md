@@ -92,6 +92,19 @@ dni
 
 Testing: http://localhost:8083
 
+
+# Interfaz
+Para acceder al login de la interfaz la url es: **localhost:8083/cliente/login**
+### Login
+![Alt text](img/login.png?raw=true "Login")
+
+### Registro
+![Alt text](/img/register.png?raw=true "Login")
+
+
+
+
+
 ## Authors
 
 - [@RaulRodal](https://www.github.com/raulrodal)
@@ -104,7 +117,7 @@ Testing: http://localhost:8083
 - Login
 - Interoperabilidad entre los microservicios para realizar las operaciones con actualizaciones automáticas
 
-  
+
 
 
 
