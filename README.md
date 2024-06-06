@@ -100,10 +100,10 @@ Para acceder al login de la interfaz la url es: **localhost:8083/cliente/login**
 ![Alt text](img/login.png?raw=true "Login")
 
 ### Registro
-![Alt text](img/register.png?raw=true "Registro")
+![Alt text](register.png?raw=true "Registro")
 
 ### Numero de personas para el alta de reserva
-![Numero](img/NumPersonas.png?raw=true "Numero personas")
+![Numero](img/numPersonas.png?raw=true "Numero personas")
 
 ### Lista de reservas del usuario logeado
 ![Alt text](img/list.png?raw=true "Lista reservas")
