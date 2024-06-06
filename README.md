@@ -17,7 +17,7 @@ Recursos:
 **GET** /hoteles/disponibles/{id} -> Devuelve true o false dependiendo si ese hotel está disponible<br />
 **GET** /hoteles/{nombre} -> Devuelve los datos de un hotel a partir de su nombre.<br />
 
-Modelo de Datos:
+Modelo de Hotel:
 
 idHotel (autonumérico)  
 nombre  
@@ -39,7 +39,7 @@ Recursos:
 **GET** /vuelos/plazas/{plazas} -> Devuelve la lista de vuelos disponibles que tienen suficientes plazas para la cantidad especificada  
 **PUT** /vuelos?id={id}&plazas={plazas}  Actualiza las plazas disponibles de un vuelo. Recibe el id del vuelo y las plazas reservadas  
 
-Modelo de Datos:
+Modelo de Vuelo:
 
 idVuelo (autonumérico)  
 companhia  
@@ -60,9 +60,9 @@ Recursos:
 **GET** /reservas/{id} -> Devuelve la reserva del id indicado  
 **POST** /reservas -> Crea una nueva reserva. Recibe un objeto JSON con el id del vuelo, id del hotel, id del cliente y               total de personas. Actualiza las plazas disponibles en el servicio de vuelos.  
 **DELETE** /reservas/{id} -> Elimina una reserva si existe alguna con ese id  
-**GET** /reservas/hotel/{nombre}: Devuelve las reservas existentes para el nombre del hotel especificado. Interactúa con el         servicio de hoteles para obtener el id del hotel.  
+**GET** /reservas/hotel/{nombre} -> Devuelve las reservas existentes para el nombre del hotel especificado. Interactúa con           el servicio de hoteles para obtener el id del hotel.  
 
-Modelo de Datos:
+Modelo de Reserva:
 
 idReserva (autonumérico)  
 idCLiente  
@@ -81,7 +81,7 @@ Recursos:
 **POST** /clientes -> Crea un cliente. Recibe un objeto JSON con todos los parametros menos id  
 **DELETE** /clientes/{id} -> Elimina el cliente con el id especificado  
 
-Modelo de Datos:
+Modelo de Cliente:
 
 id (autonumérico)  
 user  
@@ -104,8 +104,7 @@ Testing: http://localhost:8083
 - Login
 - Interoperabilidad entre los microservicios para realizar las operaciones con actualizaciones automáticas
 
-
-## Tecnologías
+  
 
 
 
