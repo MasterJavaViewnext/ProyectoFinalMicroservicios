@@ -33,20 +33,20 @@ Este servicio gestiona la información relacionada con los vuelos.
 
 Recursos:
 
-GET /vuelos -> Devuelve todos los vuelos
-GET /vuelos/{id} -> Devuelve el vuelo con ese id
-GET /vuelos/plazas/{plazas} -> Devuelve la lista de vuelos disponibles que tienen suficientes plazas para la cantidad especificada.
-PUT /vuelos?id={id}&plazas={plazas}  Actualiza las plazas disponibles de un vuelo. Recibe el id del vuelo y las plazas reservadas.
+GET /vuelos -> Devuelve todos los vuelos  
+GET /vuelos/{id} -> Devuelve el vuelo con ese id  
+GET /vuelos/plazas/{plazas} -> Devuelve la lista de vuelos disponibles que tienen suficientes plazas para la cantidad especificada  
+PUT /vuelos?id={id}&plazas={plazas}  Actualiza las plazas disponibles de un vuelo. Recibe el id del vuelo y las plazas reservadas  
 
 Modelo de Datos:
 
-idVuelo (autonumérico)
-companhia
-fechaVuelo
-origen
-destino
-precio
-plazasDisponibles
+idVuelo (autonumérico)  
+companhia  
+fechaVuelo  
+origen  
+destino  
+precio  
+plazasDisponibles  
 
 
 ### Servicio de Reservas
@@ -54,38 +54,35 @@ Este servicio gestiona las reservas de los clientes.
 
 Recursos:
 
-GET /reservas -> Devuelve una lista de todas las reservas
-GET /reservas/{id} -> Devuelve la reserva del id indicado
-POST /reservas -> Crea una nueva reserva. Recibe un objeto JSON con el id del vuelo, id del hotel, id del cliente y total de personas. Actualiza las plazas disponibles en el servicio de vuelos.
-DELETE /reservas/{id} -> Elimina una reserva si existe alguna con ese id
-GET /reservas/hotel/{nombre}: Devuelve las reservas existentes para el nombre del hotel especificado. Interactúa con el servicio de hoteles para obtener el id del hotel.
+GET /reservas -> Devuelve una lista de todas las reservas  
+GET /reservas/{id} -> Devuelve la reserva del id indicado  
+POST /reservas -> Crea una nueva reserva. Recibe un objeto JSON con el id del vuelo, id del hotel, id del cliente y total de personas. Actualiza las plazas disponibles en el servicio de vuelos.  
+DELETE /reservas/{id} -> Elimina una reserva si existe alguna con ese id  
+GET /reservas/hotel/{nombre}: Devuelve las reservas existentes para el nombre del hotel especificado. Interactúa con el servicio de hoteles para obtener el id del hotel.  
 
 Modelo de Datos:
 
-idReserva (autonumérico)
-idCLiente
-idHotel
-idVuelo
-numPersonas
+idReserva (autonumérico)  
+idCLiente  
+idHotel  
+idVuelo  
+numPersonas  
 
 ### Servicio de Gestión de Clientes
 Este servicio gestiona la información de los clientes y las operaciones de autenticación.
 
 Recursos:
 
-POST /clientes/login: Permite a los clientes iniciar sesión.
-POST /clientes/registro: Permite a los nuevos clientes registrarse.
+POST /clientes/login: Permite a los clientes iniciar sesión.  
+POST /clientes/registro: Permite a los nuevos clientes registrarse.  
+
+
 Modelo de Datos:
 
-idCliente (autonumérico)
-nombre
-email
-contraseña
-Vistas
-La aplicación incluye vistas para que los clientes puedan iniciar sesión y realizar reservas. Estas vistas interactúan con los microservicios para proporcionar una experiencia de usuario completa.
+id (autonumérico)  
+user  
+password  
+nombre  
+apellidos  
+dni  
 
-Instalación
-Clonar el repositorio:
-bash
-Copiar código
-git clone https://github.com/tu-usuario/agencia-viajes-microservicios.git
