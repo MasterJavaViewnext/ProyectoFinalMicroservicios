@@ -76,10 +76,10 @@ Testing: http://localhost:8082
 Este servicio gestiona la información de los clientes y las operaciones de autenticación.
 
 Recursos:
-
-POST /clientes/login: Permite a los clientes iniciar sesión.  
-POST /clientes/registro: Permite a los nuevos clientes registrarse.  
-
+GET /clientes -> devuelve una lista de todos los clientes  
+GET /clientes/{id} -> devuelve el cliente del id especificado  
+POST /clientes -> Crea un cliente. Recibe un objeto JSON con todos los parametros menos id  
+DELETE /clientes/{id} -> Elimina el cliente con el id especificado  
 
 Modelo de Datos:
 
