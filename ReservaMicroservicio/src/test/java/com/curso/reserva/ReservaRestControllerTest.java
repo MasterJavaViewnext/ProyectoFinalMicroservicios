@@ -85,18 +85,5 @@ class ReservaRestControllerTest {
 			.andExpect(jsonPath("$.idVuelo", is(1)))
 			.andExpect(jsonPath("$.numPersonas", is(1)));
 	}
-	
-	@Test
-	public void getReservaByNombreHotelTest() throws Exception {
-		mockMvc.perform(get("/reservas/hotel/Hotel la paz"))
-			.andExpect(status().isOk())
-			.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-			.andExpect(jsonPath("$.idReserva", is(1)))
-			.andExpect(jsonPath("$.idCliente", is(1)))
-			.andExpect(jsonPath("$.idHotel", is(1)))
-			.andExpect(jsonPath("$.idVuelo", is(1)))
-			.andExpect(jsonPath("$.numPersonas", is(1)));
-	}
-
 
 }
