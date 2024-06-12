@@ -123,4 +123,4 @@ Para acceder al login de la interfaz la url es:  **http://localhost:8083/cliente
 - Interoperabilidad entre los microservicios para realizar las operaciones con actualizaciones automáticas
 
 ## Tecnologías
-Spring Boot, MySQL, ThymeLeaf, JUnit, Swagger
+Spring Boot, JPA, MySQL, ThymeLeaf, JUnit, Mockito, Swagger
